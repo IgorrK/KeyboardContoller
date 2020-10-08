@@ -28,15 +28,15 @@ public final class KeyboardController {
 
     // MARK: - Properties
 
-    /// Parent view to be animated when keyboard frame changes.
-    private unowned let view: UIView
+    /// Parent view controller to be animated when keyboard frame changes.
+    private unowned let viewController: UIViewController
 
     /// Scroll view that needs to adjust `contentInset` when keyboard frame changes.
     private unowned var scrollView: UIScrollView?
 
     /// Height constraint of parent view.
     /// (Recommended to use `view.height == superview.height`)
-    private unowned let contentDeltaHeightConstraint: NSLayoutConstraint
+    private unowned let contentDeltaHeightConstraint: NSLayoutConstraint?
 
     /// Content behavior when keyboard frame changes.
     private let behaviorType: ContentBehaviorType
@@ -53,12 +53,12 @@ public final class KeyboardController {
     /// Creates a ready-to-use instance with the given configuration.
     ///
     /// - Parameters:
-    ///   - view: Parent view to be animated when keyboard frame changes.
+    ///   - viewController: Parent view controller  to be animated when keyboard frame changes.
     ///   - constraint: Height constraint of parent view.
     ///   - behaviorType: Content behavior whe keyboard frame changes.
     ///   - scrollView: Optional scroll view that needs to adjust `contentInset` when keyboard frame changes.
-    public init(view: UIView, constraint: NSLayoutConstraint, behaviorType: ContentBehaviorType, scrollView: UIScrollView? = nil) {
-        self.view = view
+    public init(viewController: UIViewController, constraint: NSLayoutConstraint, behaviorType: ContentBehaviorType, scrollView: UIScrollView? = nil) {
+        self.viewController = viewController
         self.contentDeltaHeightConstraint = constraint
         self.behaviorType = behaviorType
         self.scrollView = scrollView
@@ -90,17 +90,10 @@ public final class KeyboardController {
         var delta: CGFloat
         switch behaviorType {
         case .contentViewHeight:
-            if #available(iOS 11.0, *) {
-                delta = -keyboardInfo.keyboardHeightInSafeArea(keyboardFrame: keyboardInfo.endFrame, inside: view)
-            } else {
-                delta = -keyboardInfo.endFrame.height
-            }
+            delta = -keyboardInfo.keyboardHeightInSafeArea(keyboardFrame: keyboardInfo.endFrame, inside: viewController.view)
         case .keepBottomViewInFocus(let bottomView, let offset):
-            var y = bottomView.frame.maxY + offset
-            if #available(iOS 11.0, *) {
-                y += view.safeAreaInsets.top
-            }
-            let currentDelta = contentDeltaHeightConstraint.constant
+            let y = viewController.view.safeAreaInsets.top + bottomView.frame.maxY + offset
+            let currentDelta = contentDeltaHeightConstraint?.constant ?? 0
             delta = currentDelta - (y - keyboardInfo.endFrame.origin.y)
             if delta > 0 { delta = 0 }
         case .custom(let calculationClosure):
@@ -109,6 +102,32 @@ public final class KeyboardController {
         return delta
     }
 
+    
+//    private func calculateDelta(for keyboardInfo: KeyboardInfo) -> CGFloat? {
+//        var delta: CGFloat
+//        switch behaviorType {
+//        case .contentViewHeight:
+//            if #available(iOS 11.0, *) {
+//                delta = -keyboardInfo.keyboardHeightInSafeArea(keyboardFrame: keyboardInfo.endFrame, inside: view)
+//            } else {
+//                delta = -keyboardInfo.endFrame.height
+//            }
+//        case .keepBottomViewInFocus(let bottomView, let offset):
+//            var y = bottomView.frame.maxY + offset
+//            if #available(iOS 11.0, *) {
+//                y += view.safeAreaInsets.top
+//            }
+//            let currentDelta = contentDeltaHeightConstraint.constant
+//            delta = currentDelta - (y - keyboardInfo.endFrame.origin.y)
+//            if delta > 0 { delta = 0 }
+//        case .custom(let calculationClosure):
+//            delta = calculationClosure(keyboardInfo)
+//        }
+//        return delta
+//    }
+    
+    
+
     // MARK: - Notifications
 
     @objc fileprivate func keyboardWillShow(_ notification: Notification) {
@@ -116,17 +135,17 @@ public final class KeyboardController {
             let delta = calculateDelta(for: keyboardInfo) else {
                 return
         }
-        contentDeltaHeightConstraint.constant = delta
+        contentDeltaHeightConstraint?.constant = delta
         let bottomInset: CGFloat
         if #available(iOS 11.0, *) {
-            bottomInset = keyboardInfo.keyboardHeightInSafeArea(keyboardFrame: keyboardInfo.endFrame, inside: view)
+            bottomInset = keyboardInfo.keyboardHeightInSafeArea(keyboardFrame: keyboardInfo.endFrame, inside: viewController.view)
         } else {
             bottomInset = keyboardInfo.endFrame.height
         }
 
         scrollView?.contentInset.bottom =  bottomInset
         keyboardInfo.animateView({ [weak self] in
-            self?.view.layoutIfNeeded()
+            self?.viewController.view.layoutIfNeeded()
         })
         onKeyboardWillShow?(keyboardInfo)
     }
@@ -138,10 +157,10 @@ public final class KeyboardController {
 
     @objc fileprivate func keyboardWillHide(_ notification: Notification) {
         guard let keyboardInfo = KeyboardInfo(notification: notification) else { return }
-        contentDeltaHeightConstraint.constant = 0.0
+        contentDeltaHeightConstraint?.constant = 0.0
         scrollView?.contentInset.bottom = 0.0
         keyboardInfo.animateView({ [weak self] in
-            self?.view.layoutIfNeeded()
+            self?.viewController.view.layoutIfNeeded()
         })
         onKeyboardWillHide?(keyboardInfo)
     }

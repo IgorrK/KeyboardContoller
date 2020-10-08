@@ -22,7 +22,7 @@ final class ContentViewHeightBehaviorViewController: UIViewController {
     // MARK: - Properties
 
     private lazy var keyboardController: KeyboardController = { [unowned self] in
-        return KeyboardController(view: self.view, constraint: self.contentHeight, behaviorType: .contentViewHeight)
+        return KeyboardController(viewController: self, constraint: self.contentHeight, behaviorType: .contentViewHeight)
     }()
 
     // MARK: - UIViewController

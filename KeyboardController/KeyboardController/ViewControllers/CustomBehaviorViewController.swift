@@ -25,7 +25,7 @@ final class CustomBehaviorViewController: UIViewController {
     // MARK: - Properties
 
     private lazy var keyboardController: KeyboardController = { [unowned self] in
-        return KeyboardController(view: self.view, constraint: self.contentHeight, behaviorType: .custom(calculationClosure: self.keyboardDeltaCalculation), scrollView: scrollView)
+        return KeyboardController(viewController: self, constraint: self.contentHeight, behaviorType: .custom(calculationClosure: self.keyboardDeltaCalculation), scrollView: scrollView)
         }()
 
     // MARK: - UIViewController
