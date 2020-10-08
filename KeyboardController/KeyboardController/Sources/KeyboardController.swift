@@ -102,32 +102,6 @@ public final class KeyboardController {
         return delta
     }
 
-    
-//    private func calculateDelta(for keyboardInfo: KeyboardInfo) -> CGFloat? {
-//        var delta: CGFloat
-//        switch behaviorType {
-//        case .contentViewHeight:
-//            if #available(iOS 11.0, *) {
-//                delta = -keyboardInfo.keyboardHeightInSafeArea(keyboardFrame: keyboardInfo.endFrame, inside: view)
-//            } else {
-//                delta = -keyboardInfo.endFrame.height
-//            }
-//        case .keepBottomViewInFocus(let bottomView, let offset):
-//            var y = bottomView.frame.maxY + offset
-//            if #available(iOS 11.0, *) {
-//                y += view.safeAreaInsets.top
-//            }
-//            let currentDelta = contentDeltaHeightConstraint.constant
-//            delta = currentDelta - (y - keyboardInfo.endFrame.origin.y)
-//            if delta > 0 { delta = 0 }
-//        case .custom(let calculationClosure):
-//            delta = calculationClosure(keyboardInfo)
-//        }
-//        return delta
-//    }
-    
-    
-
     // MARK: - Notifications
 
     @objc fileprivate func keyboardWillShow(_ notification: Notification) {
