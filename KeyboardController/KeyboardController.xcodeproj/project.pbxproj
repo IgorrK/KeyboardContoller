@@ -9,25 +9,33 @@
 /* Begin PBXBuildFile section */
 		84836B4E252F1A2F00519F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B4D252F1A2F00519F36 /* AppDelegate.swift */; };
 		84836B50252F1A2F00519F36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B4F252F1A2F00519F36 /* SceneDelegate.swift */; };
-		84836B52252F1A2F00519F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B51252F1A2F00519F36 /* ViewController.swift */; };
-		84836B55252F1A2F00519F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84836B53252F1A2F00519F36 /* Main.storyboard */; };
 		84836B57252F1A3100519F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84836B56252F1A3100519F36 /* Assets.xcassets */; };
 		84836B5A252F1A3100519F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84836B58252F1A3100519F36 /* LaunchScreen.storyboard */; };
 		84836B65252F1A4900519F36 /* KeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B63252F1A4900519F36 /* KeyboardInfo.swift */; };
 		84836B66252F1A4900519F36 /* KeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B64252F1A4900519F36 /* KeyboardController.swift */; };
+		84836B6E252F204300519F36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B69252F204300519F36 /* MainViewController.swift */; };
+		84836B6F252F204300519F36 /* ContentViewHeightBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B6A252F204300519F36 /* ContentViewHeightBehaviorViewController.swift */; };
+		84836B70252F204300519F36 /* CustomBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B6B252F204300519F36 /* CustomBehaviorViewController.swift */; };
+		84836B71252F204300519F36 /* KeyboardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B6C252F204300519F36 /* KeyboardInfoViewController.swift */; };
+		84836B72252F204300519F36 /* KeepBottomViewBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836B6D252F204300519F36 /* KeepBottomViewBehaviorViewController.swift */; };
+		84836B76252F206100519F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84836B75252F206100519F36 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84836B4A252F1A2F00519F36 /* KeyboardController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84836B4D252F1A2F00519F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84836B4F252F1A2F00519F36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84836B51252F1A2F00519F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84836B54252F1A2F00519F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84836B56252F1A3100519F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84836B59252F1A3100519F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84836B5B252F1A3100519F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84836B63252F1A4900519F36 /* KeyboardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
 		84836B64252F1A4900519F36 /* KeyboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardController.swift; sourceTree = "<group>"; };
+		84836B69252F204300519F36 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		84836B6A252F204300519F36 /* ContentViewHeightBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewHeightBehaviorViewController.swift; sourceTree = "<group>"; };
+		84836B6B252F204300519F36 /* CustomBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBehaviorViewController.swift; sourceTree = "<group>"; };
+		84836B6C252F204300519F36 /* KeyboardInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInfoViewController.swift; sourceTree = "<group>"; };
+		84836B6D252F204300519F36 /* KeepBottomViewBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeepBottomViewBehaviorViewController.swift; sourceTree = "<group>"; };
+		84836B75252F206100519F36 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +69,13 @@
 			isa = PBXGroup;
 			children = (
 				84836B62252F1A3A00519F36 /* Sources */,
+				84836B7A252F217F00519F36 /* ViewControllers */,
 				84836B4D252F1A2F00519F36 /* AppDelegate.swift */,
-				84836B4F252F1A2F00519F36 /* SceneDelegate.swift */,
-				84836B51252F1A2F00519F36 /* ViewController.swift */,
-				84836B53252F1A2F00519F36 /* Main.storyboard */,
 				84836B56252F1A3100519F36 /* Assets.xcassets */,
-				84836B58252F1A3100519F36 /* LaunchScreen.storyboard */,
 				84836B5B252F1A3100519F36 /* Info.plist */,
+				84836B58252F1A3100519F36 /* LaunchScreen.storyboard */,
+				84836B75252F206100519F36 /* Main.storyboard */,
+				84836B4F252F1A2F00519F36 /* SceneDelegate.swift */,
 			);
 			path = KeyboardController;
 			sourceTree = "<group>";
@@ -79,6 +87,18 @@
 				84836B63252F1A4900519F36 /* KeyboardInfo.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		84836B7A252F217F00519F36 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84836B6A252F204300519F36 /* ContentViewHeightBehaviorViewController.swift */,
+				84836B6B252F204300519F36 /* CustomBehaviorViewController.swift */,
+				84836B6D252F204300519F36 /* KeepBottomViewBehaviorViewController.swift */,
+				84836B6C252F204300519F36 /* KeyboardInfoViewController.swift */,
+				84836B69252F204300519F36 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84836B76252F206100519F36 /* Main.storyboard in Resources */,
 				84836B5A252F1A3100519F36 /* LaunchScreen.storyboard in Resources */,
 				84836B57252F1A3100519F36 /* Assets.xcassets in Resources */,
-				84836B55252F1A2F00519F36 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,9 +171,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84836B52252F1A2F00519F36 /* ViewController.swift in Sources */,
+				84836B6F252F204300519F36 /* ContentViewHeightBehaviorViewController.swift in Sources */,
 				84836B4E252F1A2F00519F36 /* AppDelegate.swift in Sources */,
+				84836B70252F204300519F36 /* CustomBehaviorViewController.swift in Sources */,
 				84836B66252F1A4900519F36 /* KeyboardController.swift in Sources */,
+				84836B71252F204300519F36 /* KeyboardInfoViewController.swift in Sources */,
+				84836B6E252F204300519F36 /* MainViewController.swift in Sources */,
+				84836B72252F204300519F36 /* KeepBottomViewBehaviorViewController.swift in Sources */,
 				84836B65252F1A4900519F36 /* KeyboardInfo.swift in Sources */,
 				84836B50252F1A2F00519F36 /* SceneDelegate.swift in Sources */,
 			);
@@ -162,14 +186,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		84836B53252F1A2F00519F36 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84836B54252F1A2F00519F36 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		84836B58252F1A3100519F36 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
